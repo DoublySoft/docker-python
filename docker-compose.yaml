@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  python:
+    hostname:       ${NAME}-python
+    container_name: ${NAME}-python
+    image: ${NAME}-python:local
+    build:
+      context: .
+      dockerfile: ./docker/python/Dockerfile
+    restart: always
+    # environment:
+      # APP_ENV: dev
+      # DATABASE_URL: mysql://root:root@mysql:3306/irontec-backend?serverVersion=5.7
+    # volumes:
+      # - ./symfony/:/var/www/symfony/
+    # networks:
+      # - symfony
+    # depends_on:
+      # - mysql
